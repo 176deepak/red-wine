@@ -1,0 +1,47 @@
+- Project Root
+    - README.md				//A file containing project information, instructions, and any necessary documentation.
+    - LICENSE	        		//A file specifying the project's license terms.
+    - .gitignore			//A file listing files and directories to be ignored by version control (e.g., temporary files, data files).
+    - Data
+        - Raw				//A directory containing the raw, unprocessed data files obtained from various sources.
+            - data_file1.csv
+            - data_file2.csv
+        - Processed			//A directory for storing preprocessed and cleaned data.
+            - preprocessed_data.csv
+        - Features			//A directory to store engineered features derived from the raw data.
+            - engineered_features.csv
+        - Splits			//A directory to store pre-defined splits of the data (e.g., training, validation, testing).
+            - train.csv
+            - validation.csv
+            - test.csv
+    - Notebooks
+        - Exploratory Analysis.ipynb	//Jupyter notebook(s) for exploratory data analysis.
+        - Preprocessing.ipynb		//Notebook(s) for data preprocessing tasks.
+        - Feature Engineering.ipynb	//Notebook(s) for feature engineering and transformation.
+        - Model Training.ipynb		//Notebook(s) for model selection, training, and evaluation.
+        - Inference.ipynb		//Notebook(s) for making predictions or performing inference using trained models.
+    - Models
+        - Saved Models			//A directory to store trained and serialized model files.
+            - model1.pkl		
+            - model2.pkl
+        - Model Evaluation		//A directory for storing evaluation metrics and performance results.
+            - evaluation_metrics.txt
+    - Scripts
+        - Data Processing.py		//Python script(s) for data cleaning, preprocessing, and feature engineering tasks.
+        - Model Training.py		//Python script(s) for training machine learning models.
+        - Inference.py			//Python script(s) for deploying and running the trained models.
+    - Config
+        - Parameters.yaml		//A YAML file containing hyperparameters and configuration settings for models and experiments.
+    - Documentation
+        - Reports			//A directory to store project reports, summaries, or presentations.
+            - project_report.pdf
+        - Images			//A directory for storing images and plots generated during the project.
+            - plot1.png
+            - plot2.png
+    - Environment			
+        - requirements.txt		//A file listing the project's dependencies and their versions.
+        - environment.yml		// A YAML file specifying the project's conda environment.
+    - Tests
+        - Unit Tests			//A directory to store unit tests for different modules or components of the project.
+            - test_data_processing.py
+            - test_model_training.py
