@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Red Wine Classifier</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='CSS/style.css')}}">
+    </head>
+    <body>
+        <h1>&#x1F377; Red Wine Classifier &#127863;</h1>
+        <div class="data">
+            <div class="form-data">
+                <form method="POST">
+                    <label for="fixed-acidity">Fixed acidity:</label>
+                    <input id="fixed-acidity" type="number" name="fixed-acidity" step="0.00001" />
+                    
+                    <label for="volatile-acidity">Volatile acidity:</label>
+                    <input id="volatile-acidity" type="number" name="volatile-acidity" step="0.00001" />
+                    
+                    <label for="residual-sugar">Residual sugar:</label>
+                    <input id="residual-sugar" type="number" name="residual-sugar" step="0.00001"/>
+                    
+                    <label for="chlorides">Chlorides:</label>
+                    <input id="chlorides" type="number" name="chlorides" step="0.00001" />
+                    
+                    <label for="free-sulfur-dioxide">Free sulfur dioxide:</label>
+                    <input id="free-sulfur-dioxide" type="number" name="free-sulfur-dioxide" step="0.00001" />
+                    
+                    <label for="total-sulfur-dioxide">Total sulfur dioxide:</label>
+                    <input id="total-sulfur-dioxide" type="number" name="total-sulfur-dioxide" step="0.00001" />
+                    
+                    <label for="density">Density:</label>
+                    <input id="density" type="number" name="density" step="0.00001" />
+                    
+                    <label for="pH">pH:</label>
+                    <input id="pH" type="number" name="pH" step="0.00001" />
+                    
+                    <label for="sulphates">Sulphates:</label>
+                    <input id="sulphates" type="number" name="sulphates" step="0.00001" />
+                    
+                    <label for="alcohol">Alcohol:</label>
+                    <input id="alcohol" type="number" name="alcohol" step="0.00001" />
+                    
+                    <input class="button" type="submit" value="submit" />
+                </form>
+            </div>
+        </div>
+
+        <h3>
+            Red Wine Quality : {{quality}}
+        </h3>
+        
+    </body>
+</html>

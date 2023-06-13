@@ -1,11 +1,13 @@
 #required modules
 import numpy as np
 import pandas as pd
+from sklearn.pipeline import Pipeline
 from imblearn.over_sampling import RandomOverSampler
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.compose import ColumnTransformer
+import pickle
 
 
 #function for handling imbalace dataset by oversampling method using RandomOverSampler of imblearn module 
@@ -36,11 +38,27 @@ def feature_selector(dataset, threshold):
 # function for scaling dataset columns into same scale or -1 to 1 
 def data_transformer(X, y):
     try:
-        cols = list(X.columns)
-        scaler = StandardScaler()
-        scaler.fit(X)
-        X = scaler.transform(X)    
-        X = pd.DataFrame(X, columns=cols)
+        print("Step 1:")
+        numeric_features = list(X.columns)
+        numeric_transformer = Pipeline(steps=[('imputer', SimpleImputer(strategy='mean')), ('scaler', StandardScaler())])
+        preprocessor = ColumnTransformer(
+        transformers=[('numeric', numeric_transformer, numeric_features)])
+        pipeline = Pipeline(steps = [
+        ('preprocessor', preprocessor)  
+        ])
+        print("step 2")
+        X = pipeline.fit_transform(X)
+        print("step 3")
+        with open('Models\Saved_Models\preprocessor.pkl', 'wb') as file:
+            pickle.dump(pipeline, file)
+        print("step 4")
+        
+        # cols = list(X.columns)
+        # scaler = StandardScaler()
+        # scaler.fit(X)
+        # X = scaler.transform(X)
+        print("step 5")    
+        X = pd.DataFrame(X, columns=numeric_features)
         y = y.apply(lambda x: 1 if x<7 else 0)
         return (X, y)
     except:

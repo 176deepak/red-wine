@@ -1,0 +1,40 @@
+body{
+    background-color: rgb(15, 14, 14);
+    color: azure;
+
+}
+
+h1{
+    text-align: center;
+}
+
+.data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+}
+
+form{
+    display: grid;
+    grid-template-columns: 15vw 15vw;
+}
+
+form input{
+    margin-bottom: 10px;
+}
+
+.button{
+    width: 5em;
+    margin-top: 3vh;
+    padding: 7px 10px 7px 10px;
+    color: azure;
+    background-color: brown;
+    border: none;
+    border-radius: 3px;
+}
+
+h3{
+    text-align: center;
+    margin-top: 5vh;
+}
