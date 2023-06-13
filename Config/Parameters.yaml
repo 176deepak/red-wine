@@ -1,0 +1,18 @@
+K Neighbors Classifier:
+  n_neighbors: 4
+  p: 1
+  weights: distance
+Logistic Classifier:
+  C: 2
+  solver: newton-cholesky
+  tol: 0.01
+Random Forest Classifier:
+  criterion: gini
+  max_features: sqrt
+  n_estimators: 110
+Support Vector Classifier:
+  C: 3
+  gamma: auto
+XGB Classifier:
+  learning_rate: 1.5
+  n_estimators: 5

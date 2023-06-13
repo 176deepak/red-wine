@@ -12,6 +12,7 @@ from sklearn.ensemble import RandomForestClassifier
 from xgboost import XGBClassifier
 from sklearn.metrics import r2_score, accuracy_score
 import pickle
+import yaml
 
 def train_test():
     train = pd.read_csv(r"Data\Splits\train.csv")
@@ -80,7 +81,9 @@ def models_report(X_train, X_test, y_train, y_test):
     
         accuracy_report[list(models.keys())[i]] = [test_model_score]
         params_report[list(models.keys())[i]] = gs.best_params_
-
+        
+        with open('Config\Parameters.yaml', 'w') as f:
+            yaml.dump(params_report, f)
 
     return (models, accuracy_report, params_report)
 
