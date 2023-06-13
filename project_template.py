@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 import logging
 
-logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
+logging.basicConfig(filename='project.log', level=logging.INFO, format='[%(asctime)s]: %(message)s:')
 
 list_of_files = ['README.md',
                  'Data/Raw/data_file.csv',
@@ -16,6 +16,7 @@ list_of_files = ['README.md',
                  'Notebooks/Feature_Engineering.ipynb',
                  'Notebooks/Model_Training.ipynb',
                  'Notebooks/Inference.ipynb',
+                 'Models/Saved_Models/preprocessor.pkl'
                  'Models/Saved_Models/model.pkl',
                  'Models/Model_Evaluation/evaluation_metrics.txt',
                  'Scripts/Data_Processing.py',

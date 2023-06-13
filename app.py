@@ -3,6 +3,7 @@ import pandas as pd
 import pickle
 from flask import Flask, render_template, request
 from sklearn.preprocessing import StandardScaler
+from Scripts.Inference import prediction
 
 
 app = Flask(__name__)
@@ -36,19 +37,9 @@ def index():
             'sulphates': [sulphates],
             'alcohol': [alcohol]
         }
-
-        cols = list(data.keys())
-
-        data = pd.DataFrame(data=data)
-        preprocessor = pickle.load(open('Models\Saved_Models\preprocessor.pkl', 'rb'))
-        data_scaled=preprocessor.transform(data)
-        data = pd.DataFrame(data_scaled, columns=cols)
-
-        predictor = pickle.load(open('Models\Saved_Models\model.pkl', 'rb'))
-        pred = predictor.predict(data)
-        print(pred)
-
-        return render_template('index.html', quality = quality)
+        
+        pred = prediction(data_dict = data)
+        return render_template('index.html', quality = pred)
 
 if __name__ == '__main__':
     app.run(debug=True)
