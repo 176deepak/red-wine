@@ -17,9 +17,9 @@ def prediction(data_dict):
         pred = predictor.predict(data)
         logging.info('Success! Prediction done.')
 
-        if pred == 1:
+        if pred[0] == 1:
             return 'Bad quality wine.'
-        elif pred == 0:
+        elif pred[0] == 0:
             return 'Good quality wine.'
         
     except:
