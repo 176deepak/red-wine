@@ -7,7 +7,7 @@ import logging
 def prediction(data_dict):
     try:
         data = pd.DataFrame(data=data_dict)
-        cols = list(data_dict.columns)
+        cols = list(data.columns)
 
         preprocessor = pkl.load(open('Models\Saved_Models\preprocessor.pkl', 'rb'))
         predictor = pkl.load(open('Models\Saved_Models\model.pkl', 'rb'))
@@ -18,9 +18,9 @@ def prediction(data_dict):
         logging.info('Success! Prediction done.')
 
         if pred[0] == 1:
-            return 'Bad quality wine.'
+            return 'Bad quality wine'
         elif pred[0] == 0:
-            return 'Good quality wine.'
+            return 'Good quality wine'
         
     except:
         logging.error('Error! Prediction failed.')

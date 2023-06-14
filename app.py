@@ -13,7 +13,6 @@ def index():
     if request.method == 'GET':
         return render_template('index.html')
     elif request.method == 'POST':
-        quality = None
         fa = float(request.form['fixed-acidity'])
         va = float(request.form['volatile-acidity'])
         rs = float(request.form['residual-sugar'])
